@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,7 +6,190 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Our Little Memories ♡</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f4faff;color:#52677b;font-family:Arial,"Hiragino Kaku Gothic ProN",sans-serif;text-align:center}.wrap{max-width:680px;margin:auto;padding:24px 18px}.hero{background:white;border:1px solid #d9ebfa;border-radius:28px;padding:34px 18px;box-shadow:0 8px 28px #d9eaf566}.heart{color:#e6a6bf;font-size:28px}.eyebrow{letter-spacing:3px;color:#7aaed7;font-size:12px}.days{font-size:76px;font-weight:bold;color:#76b4e8;margin:12px 0}.days small{font-size:20px}.date{color:#8ca0b2;font-size:13px}.section{margin-top:24px;background:white;border-radius:22px;padding:24px 18px;border:1px solid #e1eef8}.note{background:#f0f8ff;padding:15px;border-radius:16px;line-height:1.8}.footer{padding:24px;font-size:12px;color:#9aafc0}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4faff;
+  color: #52677b;
+  font-family: Arial, "Hiragino Kaku Gothic ProN", sans-serif;
+  text-align: center;
+}
+
+.wrap {
+  max-width: 680px;
+  margin: auto;
+  padding: 24px 18px;
+}
+
+.hero {
+  background: white;
+  border: 1px solid #d9ebfa;
+  border-radius: 28px;
+  padding: 34px 18px;
+  box-shadow: 0 8px 28px #d9eaf566;
+}
+
+.heart {
+  color: #e6a6bf;
+  font-size: 28px;
+}
+
+.eyebrow {
+  letter-spacing: 3px;
+  color: #7aaed7;
+  font-size: 12px;
+}
+
+.days {
+  font-size: 76px;
+  font-weight: bold;
+  color: #76b4e8;
+  margin: 12px 0;
+}
+
+.days small {
+  font-size: 20px;
+}
+
+.date {
+  color: #8ca0b2;
+  font-size: 13px;
+}
+
+.timer-title {
+  color: #7aaed7;
+  font-size: 13px;
+  margin: 24px 0 8px;
+}
+
+.timer {
+  display: inline-block;
+  margin: 0 auto 12px;
+  padding: 12px 16px;
+  background: #f0f8ff;
+  border: 1px solid #d9ebfa;
+  border-radius: 18px;
+  color: #609fd8;
+  font-size: clamp(16px, 4vw, 23px);
+  font-weight: bold;
+  line-height: 1.8;
+  font-variant-numeric: tabular-nums;
+}
+
+.love-note {
+  color: #91a8bc;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.section {
+  margin-top: 24px;
+  background: white;
+  border-radius: 22px;
+  padding: 24px 18px;
+  border: 1px solid #e1eef8;
+}
+
+.note {
+  background: #f0f8ff;
+  padding: 15px;
+  border-radius: 16px;
+  line-height: 1.8;
+}
+
+.footer {
+  padding: 24px;
+  font-size: 12px;
+  color: #9aafc0;
+}
 </style>
 </head>
-<body><main class="wrap"><section class="hero"><div class="heart">♡ ♡ ♡</div><p class="eyebrow">OUR LITTLE STORY</p><h1>ふたりの思い出ノート</h1><p>出会ってから</p><div class="days" id="days">177<small>日目</small></div><p class="date">2026.05.05 — forever together</p><p>これからも、ふたりの思い出を増やそう。</p></section><section class="section"><h2>🩵 ふたりのこと</h2><p class="note">ここは、ふたりの大切な思い出のお部屋。<br>たくさん笑って、たくさん思い出を作ろうね。</p></section><section class="section"><h2>📸 ふたりのアルバム</h2><p>これから写真アルバムをつなげるよ。</p><p class="note">写真をふたりで共有する機能は、次の設定で追加するね。<br>今は個人的な写真をここに載せないでね。</p></section><p class="footer">Made with ♡ for two</p></main><script>const start=new Date(2026,4,5);const now=new Date();const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());document.getElementById("days").innerHTML=Math.floor((today-start)/86400000)+1+"<small>日目</small>";</script></body></html>
+
+<body>
+<main class="wrap">
+
+  <section class="hero">
+    <div class="heart">♡ ♡ ♡</div>
+    <p class="eyebrow">OUR LITTLE STORY</p>
+
+    <h1>ふたりの思い出ノート</h1>
+
+    <p>出会ってから</p>
+    <div class="days" id="days">--<small>日目</small></div>
+
+    <p class="date">2026.05.05 — forever together</p>
+
+    <p class="timer-title">♡ 出会ってからの時間 ♡</p>
+    <div class="timer" id="timer" aria-live="off">
+      計算中...
+    </div>
+
+    <p class="love-note">これからも、ふたりの思い出を増やそう。</p>
+  </section>
+
+  <section class="section">
+    <h2>🩵 ふたりのこと</h2>
+    <p class="note">
+      ここは、ふたりの大切な思い出のお部屋。<br>
+      たくさん笑って、たくさん思い出を作ろうね。
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>📸 ふたりのアルバム</h2>
+    <p>これから写真アルバムをつなげるよ。</p>
+    <p class="note">
+      写真をふたりで共有する機能は、次の設定で追加するね。<br>
+      今は個人的な写真をここに載せないでね。
+    </p>
+  </section>
+
+  <p class="footer">Made with ♡ for two</p>
+
+</main>
+
+<script>
+const start = new Date(2026, 4, 5, 0, 0, 0);
+
+function updateCounter() {
+  const now = new Date();
+
+  // 出会った日を1日目として数える
+  const today = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate()
+  );
+
+  const startDay = new Date(2026, 4, 5);
+  const dayCount =
+    Math.floor((today - startDay) / 86400000) + 1;
+
+  document.getElementById("days").innerHTML =
+    dayCount + "<small>日目</small>";
+
+  // 出会った日の午前0時からの経過時間
+  let elapsed = Math.max(0, now.getTime() - start.getTime());
+
+  const totalSeconds = Math.floor(elapsed / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  document.getElementById("timer").textContent =
+    days + "日 " +
+    hours + "時間 " +
+    minutes + "分 " +
+    seconds + "秒";
+}
+
+updateCounter();
+setInterval(updateCounter, 1000);
+</script>
+
+</body>
+</html>
