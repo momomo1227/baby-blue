@@ -141,6 +141,39 @@ body {
   }
 }
 
+/* ふわふわ光る小さなラメ */
+.sparkles::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, #ffffff 1px, transparent 2px),
+    radial-gradient(circle, #a6e4ff 1.5px, transparent 3px),
+    radial-gradient(circle, #d4f2ff 1px, transparent 2px),
+    radial-gradient(circle, #ffffff 1.5px, transparent 3px);
+  background-size:
+    47px 53px,
+    83px 71px,
+    61px 89px,
+    109px 97px;
+  background-position:
+    0 0,
+    20px 30px,
+    40px 10px,
+    15px 55px;
+  animation: glitter 4s ease-in-out infinite alternate;
+}
+
+@keyframes glitter {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .wrap {
   position: relative;
   z-index: 1;
