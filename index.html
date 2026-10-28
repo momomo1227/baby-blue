@@ -190,6 +190,60 @@ body {
   }
 }
 
+  
+/* ふたりのポラロイド風アルバム */
+.album {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.photo-card {
+  background: #ffffff;
+  padding: 10px 10px 16px;
+  border: 1px solid #e1eef8;
+  border-radius: 8px;
+  box-shadow: 0 5px 14px #b9d8ee55;
+  transform: rotate(-2deg);
+}
+
+.photo-card:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.photo-placeholder {
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(135deg, #eff9ff, #d8efff, #f9fcff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  color: #76b4e8;
+  border-radius: 4px;
+}
+
+.photo-card p {
+  margin: 12px 0 5px;
+  color: #52677b;
+  font-size: 13px;
+}
+
+.photo-card small {
+  color: #91a8bc;
+  font-size: 11px;
+}
+
+@media (max-width: 360px) {
+  .album {
+    gap: 10px;
+  }
+
+  .photo-card {
+    padding: 7px 7px 12px;
+  }
+}
+
 </style>
 </head>
 
@@ -251,14 +305,35 @@ body {
     </p>
   </section>
 
-  <section class="section">
-    <h2>📸 ふたりのアルバム</h2>
-    <p>これから写真アルバムをつなげるよ。</p>
-    <p class="note">
-      写真をふたりで共有する機能は、次の設定で追加するね。<br>
-      今は個人的な写真をここに載せないでね。
-    </p>
-  </section>
+
+<section class="section">
+  <h2>📸 ふたりのアルバム</h2>
+  <p>ふたりの大切な思い出たち 🩵</p>
+
+  <div class="album">
+    <div class="photo-card">
+      <div class="photo-placeholder">🩵</div>
+      <p>はじめての思い出</p>
+      <small>2026.05.05</small>
+    </div>
+
+    <div class="photo-card">
+      <div class="photo-placeholder">♡</div>
+      <p>だいすきな時間</p>
+      <small>ふたりの宝物</small>
+    </div>
+
+    <div class="photo-card">
+      <div class="photo-placeholder">✧</div>
+      <p>これからの思い出</p>
+      <small>To be continued...</small>
+    </div>
+  </div>
+
+  <p class="love-note">
+    これから、ふたりの写真を増やしていこうね ✨
+  </p>
+</section>
 
   <p class="footer">Made with ♡ for two</p>
 
